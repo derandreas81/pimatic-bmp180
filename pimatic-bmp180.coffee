@@ -93,8 +93,8 @@ module.exports = (env) ->
       @requestValue()
       @requestValueIntervalId = setInterval( ( => @requestValue() ), @config.interval)
     
-    destroy() ->
-      clearInterval @requestValueIntervalId if @requestValueIntervalId?
+    #destroy() ->
+      #clearInterval @requestValueIntervalId if @requestValueIntervalId?
       #super()
       
     requestValue: ->
