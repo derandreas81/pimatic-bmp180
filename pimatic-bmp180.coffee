@@ -31,6 +31,9 @@ module.exports = (env) ->
   # ###MyPlugin class
   # Create a class that extends the Plugin class and implements the following functions:
   class BMP180Plugin extends env.plugins.Plugin
+    prepareConfig: (config) ->
+      if _.isNumber config.address
+        config.address = "#{config.address}"
 
     # ####init()
     # The `init` function is called by the framework to ask your plugin to initialise.
