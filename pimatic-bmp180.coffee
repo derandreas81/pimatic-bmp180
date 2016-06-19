@@ -85,17 +85,17 @@ module.exports = (env) ->
         'maxTempAge': 1
       });
 
-      #@sensor.init()
+      @sensor.init()
       
-      #Promise.promisifyAll(@sensor)
-      #super()
+      Promise.promisifyAll(@sensor)
+      super()
 
       @requestValue()
       @requestValueIntervalId = setInterval( ( => @requestValue() ), @config.interval)
     
     destroy() ->
       clearInterval @requestValueIntervalId if @requestValueIntervalId?
-      super()
+      #super()
       
     requestValue: ->
       @sensor.getPressure( (error, value) =>
