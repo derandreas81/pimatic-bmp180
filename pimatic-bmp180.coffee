@@ -85,10 +85,9 @@ module.exports = (env) ->
         'maxTempAge': 1
       });
 
-      @sensor.init()
+      #@sensor.init()
       
-      Promise.promisifyAll(@sensor)
-
+      #Promise.promisifyAll(@sensor)
       super()
 
       @requestValue()
