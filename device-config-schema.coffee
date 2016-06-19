@@ -10,11 +10,11 @@ module.exports = {
       device:
         description: "device file to use; default /dev/i2c-1"
         type: "string"
-        default: "i2c-1"
+        default: "/dev/i2c-1"
       address:
-        description: "address to use; default 0x77"
+        description: "address to use; default 119 for 0x77"
         type: "integer"
-        default: "0x77"
+        default: "119"
       interval:
         description: "interval in ms"
         type: "integer"
