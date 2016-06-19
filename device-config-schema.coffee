@@ -13,7 +13,7 @@ module.exports = {
         default: "i2c-1"
       address:
         description: "address to use; default 0x77"
-        type: "string"
+        type: "integer"
         default: "0x77"
       interval:
         description: "interval in ms"
