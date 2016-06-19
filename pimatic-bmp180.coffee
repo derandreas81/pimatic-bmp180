@@ -97,9 +97,9 @@ module.exports = (env) ->
       @requestValue()
       @requestValueIntervalId = setInterval( ( => @requestValue() ), @config.interval)
     
-    destroy() ->
-      clearInterval @requestValueIntervalId if @requestValueIntervalId?
-      super()
+    #destroy() ->
+      #clearInterval @requestValueIntervalId if @requestValueIntervalId?
+      #super()
       
     requestValue: ->
       @sensor.getPressure( (error, value) =>
