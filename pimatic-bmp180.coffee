@@ -16,7 +16,7 @@ module.exports = (env) ->
 
   # Require the  bluebird promise library
   Promise = env.require 'bluebird'
-  _ = env.require 'loadsh'
+  _ = env.require 'lodash'
 
   # Require the [cassert library](https://github.com/rhoot/cassert).
   assert = env.require 'cassert'
