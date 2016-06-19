@@ -73,14 +73,14 @@ module.exports = (env) ->
     _temperature: null
 
     constructor: (@config, lastState) ->
-      @id = config.id
-      @name = config.name
+      @id = @config.id
+      @name = @config.name
       @_pressure = lastState?.pressure?.value
       @_temperature = lastState?.temperature?.value
       BMP180 = require 'sensor_bmp085'
       @sensor = new BMP180({
-        'address': config.address,
-        'device': config.device,
+        'address': @config.address,
+        'device': @config.device,
         'sensorMode': 'ultraHighRes',
         'maxTempAge': 1
       });
@@ -92,8 +92,12 @@ module.exports = (env) ->
       super()
 
       @requestValue()
-      setInterval( ( => @requestValue() ), @config.interval)
-
+      @requestValueIntervalId = setInterval( ( => @requestValue() ), @config.interval)
+    
+    destroy() ->
+      clearInterval @requestValueIntervalId if @requestValueIntervalId?
+      super()
+      
     requestValue: ->
       @sensor.getPressure( (error, value) =>
         if value > -50
