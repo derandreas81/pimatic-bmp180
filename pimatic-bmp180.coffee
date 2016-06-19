@@ -88,7 +88,7 @@ module.exports = (env) ->
       #@sensor.init()
       
       #Promise.promisifyAll(@sensor)
-      super()
+      #super()
 
       @requestValue()
       @requestValueIntervalId = setInterval( ( => @requestValue() ), @config.interval)
