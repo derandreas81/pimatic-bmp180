@@ -62,13 +62,11 @@ module.exports = (env) ->
       pressure:
         description: "The measured barometric pressure"
         type: t.number
-        unit: 'hPa'
-        acronym: 'QNH'
+        unit: 'mbar'
       temperature:
         description: "The measured temperature"
         type: t.number
         unit: '°C'
-        acronym: 'T'
 
     template: "temperature"   
     
